@@ -40,12 +40,7 @@ android {
     }
 
     buildFeatures {
-        compose = true
 		viewBinding = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.13"
     }
 
     packaging {
@@ -60,7 +55,6 @@ android {
         ignoreTestSources = true
     }
 }
-
 dependencies {
     // Jetpack Compose
     implementation("androidx.activity:activity-compose:1.9.0")
