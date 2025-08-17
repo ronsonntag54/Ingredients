@@ -14,11 +14,12 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        // If you truly need a manifest placeholder, hardcode it like this:
+        // manifestPlaceholders += mapOf("appAuth" to "com.example.ingredients")
+        // (We don't actually use it, so it's omitted to avoid the smart-cast issue.)
     }
+
+    // Do NOT set buildToolsVersion; let AGP pick the right one.
 
     buildTypes {
         release {
@@ -28,62 +29,42 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            // defaults are fine
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+        compose = false
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    buildFeatures {
-		viewBinding = true
-        compose = false
-    }
-
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-
-    lint {
-        checkDependencies = false
-        abortOnError = false
-        ignoreTestSources = true
-    }
 }
+
 dependencies {
-    // Jetpack Compose
-    implementation("androidx.activity:activity-compose:1.9.0")
+    // Core Android UI stack (AppCompat + Material + ConstraintLayout)
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    // Kotlin and Core
+    // CameraX
+    val camerax = "1.3.4"
+    implementation("androidx.camera:camera-core:$camerax")
+    implementation("androidx.camera:camera-camera2:$camerax")
+    implementation("androidx.camera:camera-lifecycle:$camerax")
+    implementation("androidx.camera:camera-view:$camerax") // PreviewView
+
     implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.camera:camera-core:1.3.1")
-	
-	// CameraX core library using the camera2 implementation
-    implementation("androidx.camera:camera-camera2:1.3.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
 
-    // CameraX Lifecycle library
-    implementation("androidx.camera:camera-lifecycle:1.3.1")
-
-    // CameraX View class
-    implementation("androidx.camera:camera-view:1.3.1")
-
-    // CameraX Extensions (optional)
-    implementation("androidx.camera:camera-extensions:1.3.1")
-
-    // Kotlin standard library (if not already included)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
-
-    // JUnit
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 }

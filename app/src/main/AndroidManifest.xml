@@ -2,16 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ingredients">
 
-    <!-- Permissions / features -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera.any" android:required="true" />
+    <!-- Permissions go here, inside <manifest> but OUTSIDE <application> -->
+    <uses-permission android:name="android.permission.CAMERA" android:required="false" />
+
+    <!-- Needed only on Android 9 (API 28) and below.
+         maxSdkVersion makes it ignored on newer Android. -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="ingredients"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ingredients">
+
+        <activity
+            android:name=".CameraActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"
@@ -21,5 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 </manifest>
