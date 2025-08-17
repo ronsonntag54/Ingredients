@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.ingredients">
 
     <!-- Permissions / features -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -8,10 +8,11 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="ingredients"
         android:supportsRtl="true"
-        tools:targetApi="34">
-        
+        android:theme="@style/Theme.Ingredients">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Ingredients" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Base application theme using Material3 -->
+    <style name="Theme.Ingredients" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your theme here if needed -->
+        <!-- For example: -->
+        <!-- <item name="colorPrimary">@color/your_primary_color</item> -->
+    </style>
+
 </resources>
