@@ -49,6 +49,10 @@ android {
 }
 
 dependencies {
+    // ML Kit: on-device barcode scanning
+    implementation("com.google.mlkit:barcode-scanning:17.2.0")
+    // HTTP client to call Open Food Facts
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     // Core Android UI stack (AppCompat + Material + ConstraintLayout)
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")

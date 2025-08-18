@@ -1,3 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Ingredients</string>
+    <!-- App -->
+    <string name="app_name">ingredients</string>
+
+    <!-- Main screen -->
+    <string name="ingredients_camera">Camera</string>
+    <string name="ingredients_quit">Quit</string>
+
+    <!-- Camera screen -->
+    <string name="ingredients_cancel">Cancel</string>
+    <string name="ingredients_save">Save</string>
+    <string name="ingredients_camera_preview_desc">Camera preview</string>
+    <string name="ingredients_capture_not_ready">Capture not ready</string>
+    <string name="ingredients_camera_permission_required">Camera permission is required</string>
+    <string name="ingredients_saved_to">Saved to %1$s</string>
+    <string name="ingredients_saving_failed">Saving failed</string>
+    <string name="ingredients_barcode_error">Camera failed to start</string>
+
+    <!-- Barcode screen -->
+    <string name="ingredients_barcode_ready">Point your camera at a barcode</string>
+    <string name="ingredients_barcode_detected_template">Barcode: %1$s</string>
+
+    <!-- (Compat fallback for any legacy references that might still exist) -->
+    <string name="barcode_ready">Point your camera at a barcode</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="barcode_detected_template">Barcode: %1$s</string>
 </resources>

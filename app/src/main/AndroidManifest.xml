@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ingredients">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permissions go here, inside <manifest> but OUTSIDE <application> -->
-    <uses-permission android:name="android.permission.CAMERA" android:required="false" />
+    <!-- Camera permission (barcode & capture) -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- Needed only on Android 9 (API 28) and below.
-         maxSdkVersion makes it ignored on newer Android. -->
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28" />
+    <!-- Declare camera feature, but not required so app can still install on devices without camera -->
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
+        android:label="ingredients"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ingredients">
 
-        <activity
-            android:name=".CameraActivity"
-            android:exported="false" />
-
+        <!-- Home screen -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
+        <!-- Camera/Barcode screen -->
+        <activity
+            android:name=".BarcodeScanActivity"
+            android:exported="false" />
+        <activity android:name=".CameraActivity" android:exported="false" />
     </application>
 </manifest>

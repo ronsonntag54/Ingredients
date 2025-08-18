@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- AppCompat / MaterialComponents theme for activities with AppCompatActivity -->
+    <!-- AppCompat theme (no Compose). -->
     <style name="Theme.Ingredients" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Colors -->
+        <!-- Optional color overrides; you can delete these if you prefer defaults -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@android:color/white</item>
-
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@android:color/black</item>
-
-        <!-- Status bar / nav bar default behavior is fine -->
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="colorAccent">@color/teal_200</item>
     </style>
-
 </resources>
